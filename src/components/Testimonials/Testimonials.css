@@ -1,0 +1,117 @@
+.testimonials {
+  background-color: var(--color-background);
+}
+
+.testimonials-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.testimonials-header p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.testimonials-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.testimonial-card {
+  background: rgba(37, 49, 33, 0.1);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 12px;
+  padding: 3rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.testimonial-content p {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  font-style: italic;
+  color: var(--color-text-primary);
+}
+
+.testimonial-author {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.author-info h4 {
+  color: var(--color-accent);
+  margin-bottom: 0.25rem;
+  font-size: 1.1rem;
+}
+
+.author-info span {
+  display: block;
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+}
+
+.author-info .company {
+  color: var(--color-primary-green);
+  font-weight: 600;
+}
+
+.testimonials-navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-btn {
+  background: none;
+  border: 2px solid var(--color-accent);
+  color: var(--color-accent);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+  background-color: var(--color-accent);
+  color: var(--color-primary-green);
+}
+
+.testimonials-dots {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background-color: rgba(212, 175, 55, 0.3);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dot.active {
+  background-color: var(--color-accent);
+}
+
+@media (max-width: 768px) {
+  .testimonial-card {
+    padding: 2rem;
+  }
+  
+  .testimonial-content p {
+    font-size: 1.1rem;
+  }
+  
+  .testimonials-navigation {
+    gap: 1rem;
+  }
+}

@@ -1,0 +1,36 @@
+import { useEffect } from 'react'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
+import './global.css'
+import Navbar from './components/Navbar/Navbar'
+import Header from './components/Header/Header'
+import Services from './components/Services/Services'
+import About from './components/About/About'
+import Testimonials from './components/Testimonials/Testimonials'
+import Contact from './components/Contact/Contact'
+import Footer from './components/Footer/Footer'
+
+
+function App() {
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      once: true,
+      offset: 100
+    })
+  }, [])
+
+  return (
+    <div className="App">
+      <Navbar />
+      <Header />
+      <Services />
+      <About />
+      <Testimonials />
+      <Contact />
+      <Footer />
+    </div>
+  )
+}
+
+export default App
