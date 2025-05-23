@@ -9,23 +9,23 @@ const Testimonials = () => {
   
   const testimonials = [
     {
-      name: "Maria Gonzalez",
+      name: "Mariano Gonzalez",
       position: "CEO, TechStart Solutions",
-      content: "Javier completely transformed our business strategy. His methodical approach and strategic vision allowed us to increase our revenue by 150% in just 18 months.",
+      content: "EJEMPLO: Javier completely transformed our business strategy. His methodical approach and strategic vision allowed us to increase our revenue by 150% in just 18 months.",
       company: "TechStart Solutions",
       image: client1Image
     },
     {
       name: "Carlos Rodriguez",
       position: "General Director, InnovaCorp",
-      content: "Javier's consulting was key to our international expansion. His expertise and network opened doors we thought were impossible to reach.",
+      content: "EJEMPLO: Javier's consulting was key to our international expansion. His expertise and network opened doors we thought were impossible to reach.",
       company: "InnovaCorp",
       image: client2Image
     },
     {
-      name: "Ana Martinez",
+      name: "Julio Martinez",
       position: "Founder, EcoVerde",
-      content: "Thanks to Javier, we optimized our processes and reduced operational costs by 40%. His support during implementation was exceptional.",
+      content: "EJEMPLO: Thanks to Javier, we optimized our processes and reduced operational costs by 40%. His support during implementation was exceptional.",
       company: "EcoVerde",
       image: client3Image
     }

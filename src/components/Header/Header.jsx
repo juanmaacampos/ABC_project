@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import './Header.css'
 import heroImage from '../../assets/images/customer_header.png'
+import headerBgImage from '../../assets/images/header_bg.png'
 
 const Header = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth)
@@ -16,18 +17,23 @@ const Header = () => {
     }
   }, [])
 
+  const headerStyle = {
+    background: `linear-gradient(135deg, rgba(245, 245, 245, 0.85) 0%, rgba(224, 224, 224, 0.85) 100%), url(${headerBgImage})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat'
+  }
+
   return (
-    <header id="home" className="header">
+    <header id="home" className="header" style={headerStyle}>
       <div className="container">
         <div className={`header-content ${windowWidth < 768 ? 'mobile' : ''}`}>
           <div className="header-text" data-aos="fade-right">
             <div className="title-container">
               <h1 className="responsive-title">Javier Asnaghi</h1>
-              {windowWidth >= 768 && (
-                <h2 className="header-subtitle responsive-subtitle" style={{ marginTop: '24px', display: 'block', paddingTop: '8px', borderTop: '1px solid rgba(191, 161, 112, 0.3)', width: 'fit-content' }}>
-                  Business Consulting
-                </h2>
-              )}
+              <h2 className="header-subtitle responsive-subtitle">
+                Business Consulting
+              </h2>
             </div>
             <p className="header-description responsive-text">
               Transforming businesses through innovative strategies and 
@@ -36,19 +42,18 @@ const Header = () => {
             </p>
             <div className={`header-cta ${windowWidth < 768 ? 'mobile-cta' : ''}`}>
               <a href="#contact" className="btn-primary">Let's Talk</a>
-              <a href="#services" className="btn-secondary">View Services</a>
+              <a href="#services" className="btn-outline">View Services</a>
             </div>
           </div>
           
-          {/* Add wrapper div with clear positioning for mobile */}
           {windowWidth < 768 ? (
-            <div className="header-image-wrapper" style={{width: '100%', position: 'relative', marginTop: '2rem'}}>
+            <div className="header-image-wrapper">
               <div className="header-image" data-aos="fade-up">
                 <img 
                   src={heroImage} 
                   alt="Javier Asnaghi - Business Consultant" 
                   className="hero-image responsive-image"
-                  style={{maxHeight: '60vh'}}
+                  style={{maxHeight: '60vh', marginTop: '-60px'}}
                   onError={(e) => {
                     e.target.style.display = 'none';
                   }}

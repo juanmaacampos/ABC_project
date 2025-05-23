@@ -7,42 +7,58 @@
   margin-bottom: 4rem;
 }
 
+.contact-header h2 {
+  font-size: 2.3rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.5px;
+}
+
 .contact-header p {
-  font-size: 1.2rem;
-  max-width: 600px;
-  margin: 0 auto;
+  font-size: 1.18rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 0;
 }
 
 .contact-content {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 4rem;
+  gap: 3.5rem;
   max-width: 1000px;
   margin: 0 auto;
 }
 
 .contact-form {
-  background: rgba(37, 49, 33, 0.1);
-  border: 1px solid rgba(212, 175, 55, 0.2);
-  border-radius: 12px;
-  padding: 2.5rem;
+  background: rgba(255, 255, 255, 0.85);
+  border: none;
+  border-radius: 18px;
+  padding: 2.8rem 2.2rem;
+  box-shadow: 0 6px 32px 0 rgba(44, 62, 80, 0.13), 0 1.5px 6px 0 rgba(212, 175, 55, 0.08);
+  transition: box-shadow 0.3s;
+}
+
+.contact-form:hover, .contact-form:focus-within {
+  box-shadow: 0 12px 40px 0 rgba(44, 62, 80, 0.18), 0 2px 8px 0 rgba(212, 175, 55, 0.13);
 }
 
 .form-group {
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 .form-group input,
 .form-group select,
 .form-group textarea {
   width: 100%;
-  padding: 1rem;
-  background-color: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(212, 175, 55, 0.3);
-  border-radius: 6px;
+  padding: 1.15rem 1.2rem;
+  background-color: rgba(245, 245, 245, 0.85);
+  border: 1.5px solid rgba(212, 175, 55, 0.25);
+  border-radius: 8px;
   color: var(--color-text-primary);
-  font-size: 1rem;
-  transition: border-color 0.3s ease;
+  font-size: 1.08rem;
+  font-family: inherit;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  box-shadow: 0 1px 4px 0 rgba(44, 62, 80, 0.04);
 }
 
 .form-group input:focus,
@@ -50,21 +66,41 @@
 .form-group textarea:focus {
   outline: none;
   border-color: var(--color-accent);
+  box-shadow: 0 2px 8px 0 rgba(212, 175, 55, 0.10);
+  background-color: #fff;
 }
 
 .form-group input::placeholder,
 .form-group textarea::placeholder {
-  color: var(--color-text-secondary);
+  color: #b0b0b0;
+  font-size: 1rem;
+  opacity: 1;
 }
 
 .form-group select {
   cursor: pointer;
+  background-color: rgba(245, 245, 245, 0.95);
 }
 
 .btn-full {
   width: 100%;
-  padding: 1rem;
-  font-size: 1.1rem;
+  padding: 1.15rem;
+  font-size: 1.18rem;
+  font-weight: 600;
+  background: linear-gradient(90deg, var(--color-accent) 0%, #bfa14a 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px 0 rgba(212, 175, 55, 0.13);
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+  letter-spacing: 0.5px;
+}
+
+.btn-full:hover, .btn-full:focus {
+  background: linear-gradient(90deg, #bfa14a 0%, var(--color-accent) 100%);
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 4px 16px 0 rgba(212, 175, 55, 0.18);
 }
 
 .contact-info {
@@ -74,24 +110,44 @@
 }
 
 .contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
   padding-bottom: 1.5rem;
   border-bottom: 1px solid rgba(212, 175, 55, 0.2);
 }
 
-.contact-item:last-child {
+.contact-item:last-of-type {
   border-bottom: none;
 }
 
-.contact-item h3 {
+.contact-icon {
   color: var(--color-accent);
-  margin-bottom: 0.5rem;
+  margin-top: 0.2em;
+  flex-shrink: 0;
+}
+
+.contact-item div h3 {
+  color: var(--color-accent);
+  margin-top: 0;
+  margin-bottom: 0.25rem;
   font-size: 1.1rem;
 }
 
-.contact-item p {
+.contact-item div p {
   color: var(--color-text-secondary);
   margin: 0;
   font-size: 1rem;
+}
+
+.contact-item div p a {
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-item div p a:hover {
+  color: var(--color-accent);
 }
 
 .contact-availability {
@@ -102,9 +158,21 @@
   margin-top: 1rem;
 }
 
-.contact-availability h3 {
-  color: var(--color-accent);
+.contact-availability-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
   margin-bottom: 1rem;
+}
+
+.contact-availability-header .contact-icon {
+  margin-top: 0;
+}
+
+.contact-availability-header h3 {
+  color: var(--color-accent);
+  margin-bottom: 0;
+  font-size: 1.1rem;
 }
 
 .contact-availability p {
@@ -120,16 +188,18 @@
 @media (min-width: 768px) {
   .contact-content {
     grid-template-columns: 1.2fr 1fr;
-    gap: 4rem;
+    gap: 4.5rem;
+  }
+  .contact-form {
+    padding: 3.2rem 2.8rem;
   }
 }
 
 @media (min-width: 1024px) {
   .contact-content {
-    gap: 5rem;
+    gap: 5.5rem;
   }
-  
   .contact-form {
-    padding: 3rem;
+    padding: 3.5rem 3.2rem;
   }
 }

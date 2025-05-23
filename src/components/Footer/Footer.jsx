@@ -29,7 +29,7 @@ const Footer = () => {
               <ul>
                 <li><a href="#contact">Let's Talk</a></li>
                 <li><a href="mailto:javier@asnaghibusiness.com">Email</a></li>
-                <li><a href="tel:+5491112345678">Phone</a></li>
+                <li><a href="tel:+31 6 10191014">Phone</a></li>
               </ul>
             </div>
             

@@ -1,5 +1,6 @@
 .about {
-  background: linear-gradient(135deg, #e0e0e0 0%, var(--color-background) 100%);
+  /* Background is now defined via inline style in JSX */
+  position: relative;
 }
 
 .about-content {

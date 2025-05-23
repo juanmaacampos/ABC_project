@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import './Navbar.css'
 import logo from '../../assets/images/logo_left.png'
+import {AiOutlineSetting, AiOutlineInfoCircle, AiOutlineStar, AiOutlineMail } from 'react-icons/ai' // Example icons
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -32,28 +33,19 @@ const Navbar = () => {
     
     window.addEventListener('scroll', handleScroll)
     
-    // Lock body scroll when mobile menu is open
-    if (isMobileMenuOpen) {
-      document.body.style.overflow = 'hidden'
-    } else {
-      document.body.style.overflow = '' // Reset to allow CSS to take over
-    }
-    
     return () => {
       window.removeEventListener('scroll', handleScroll)
       if (observerRef.current && headerElement) {
         observerRef.current.unobserve(headerElement)
       }
-      document.body.style.overflow = '' // Reset on unmount
     }
-  }, [isMobileMenuOpen])
+  }, [])
 
   const navItems = [
-    { name: 'Home', href: '#home' },
-    { name: 'Services', href: '#services' },
-    { name: 'About', href: '#about' },
-    { name: 'Testimonials', href: '#testimonials' },
-    { name: 'Contact', href: '#contact' }
+    { name: 'Services', href: '#services', icon: <AiOutlineSetting /> },
+    { name: 'About', href: '#about', icon: <AiOutlineInfoCircle /> },
+    { name: 'Testimonials', href: '#testimonials', icon: <AiOutlineStar /> },
+    { name: 'Contact', href: '#contact', icon: <AiOutlineMail />, isButton: true }
   ]
 
   const toggleMobileMenu = () => {
@@ -64,22 +56,40 @@ const Navbar = () => {
     setIsMobileMenuOpen(false)
   }
 
+  const scrollToHome = (event) => {
+    event.preventDefault();
+    const homeElement = document.getElementById('home');
+    if (homeElement) {
+      homeElement.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    closeMobileMenu(); // Close mobile menu if open
+  };
+
+
   return (
     <nav className={`navbar ${isScrolled ? 'navbar-scrolled' : ''} ${isInHeader ? 'navbar-in-header' : ''}`}>
       <div className="container">
         <div className="navbar-content">
           <div className="navbar-brand">
-            <img 
-              src={logo} 
-              alt="Asnaghi Business Logo"
-              className="navbar-logo"
-            />
+            <a href="#home" onClick={scrollToHome} className="navbar-logo-link">
+              <img 
+                src={logo} 
+                alt="Asnaghi Business Logo"
+                className="navbar-logo"
+              />
+            </a>
           </div>
           
           <ul className="navbar-menu desktop-menu">
             {navItems.map((item) => (
               <li key={item.name}>
-                <a href={item.href}>{item.name}</a>
+                {item.isButton ? (
+                  <a href={item.href} className="btn-outline navbar-btn">{item.name}</a>
+                ) : (
+                  <a href={item.href}>{item.name}</a>
+                )}
               </li>
             ))}
           </ul>
@@ -100,9 +110,20 @@ const Navbar = () => {
             <li key={item.name}>
               <a 
                 href={item.href}
-                onClick={closeMobileMenu}
+                onClick={(e) => {
+                  // Keep existing smooth scroll for nav items if they also target IDs
+                  const targetId = item.href.substring(1);
+                  const targetElement = document.getElementById(targetId);
+                  if (targetElement) {
+                    e.preventDefault();
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                  }
+                  closeMobileMenu();
+                }}
+                className={item.isButton ? 'nav-contact-btn' : ''}
               >
-                {item.name}
+                <span className="nav-icon">{item.icon}</span>
+                <span className="nav-text">{item.name}</span>
               </a>
             </li>
           ))}

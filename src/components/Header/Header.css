@@ -2,10 +2,7 @@
   min-height: 100vh;
   display: flex;
   align-items: center;
-  background: linear-gradient(135deg, rgba(245, 245, 245, 0.85) 0%, rgba(224, 224, 224, 0.85) 100%), url('../../assets/images/header_bg.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  /* Background is now defined via inline style in JSX */
   padding-top: 100px;
   padding-bottom: 0;
   position: relative;
@@ -132,6 +129,22 @@
     margin: 0.5rem 0;
     position: relative;
     z-index: 10; /* Ensure buttons stay above image */
+  }
+  
+  /* Add specific styling for btn-secondary */
+  .btn-secondary {
+    background: transparent;
+    color: #6a3bff; /* Purple color to match the design in the image */
+    border: none;
+    text-decoration: underline;
+    padding: 10px 20px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-secondary:hover {
+    color: #5028d9;
+    text-decoration: none;
   }
   
   .header-image {

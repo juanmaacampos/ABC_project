@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import './Contact.css'
+import { MdOutlineEmail, MdOutlinePhone, MdOutlineLocationOn, MdOutlineEventAvailable } from 'react-icons/md'
+import { AiOutlineLinkedin } from 'react-icons/ai'
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -108,27 +110,42 @@ const Contact = () => {
           
           <div className="contact-info" data-aos="fade-left">
             <div className="contact-item">
-              <h3>Email</h3>
-              <p>javier@asnaghibusiness.com</p>
+              <MdOutlineEmail className="contact-icon" size={24} />
+              <div>
+                <h3>Email</h3>
+                <p><a href="mailto:javier@asnaghibusiness.com">javier@asnaghibusiness.com</a></p>
+              </div>
             </div>
             
             <div className="contact-item">
-              <h3>Phone</h3>
-              <p>+54 9 11 1234-5678</p>
+              <MdOutlinePhone className="contact-icon" size={24} />
+              <div>
+                <h3>Phone</h3>
+                <p><a href="tel:+5491112345678">+31 6 10191014</a></p>
+              </div>
             </div>
             
             <div className="contact-item">
-              <h3>LinkedIn</h3>
-              <p>linkedin.com/in/javierasnaghi</p>
+              <AiOutlineLinkedin className="contact-icon" size={24} />
+              <div>
+                <h3>LinkedIn</h3>
+                <p><a href="https://www.linkedin.com/in/javierasnaghi/" target="_blank" rel="noopener noreferrer">linkedin.com/in/javierasnaghi</a></p>
+              </div>
             </div>
             
             <div className="contact-item">
-              <h3>Location</h3>
-              <p>Buenos Aires, Argentina</p>
+              <MdOutlineLocationOn className="contact-icon" size={24} />
+              <div>
+                <h3>Location</h3>
+                <p>Amsterdam, Netherlands</p>
+              </div>
             </div>
             
             <div className="contact-availability">
-              <h3>Availability</h3>
+              <div className="contact-availability-header">
+                <MdOutlineEventAvailable className="contact-icon" size={24} />
+                <h3>Availability</h3>
+              </div>
               <p>Response within 24 hours</p>
               <p>Initial consultations at no cost</p>
             </div>

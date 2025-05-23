@@ -34,7 +34,7 @@ const Services = () => {
       <div className="container">
         <div className="services-header" data-aos="fade-up">
           <h2>Services</h2>
-          <p>Comprehensive solutions to drive your company's growth</p>
+          <p>Comprehensive solutions to drive your company's growth. EJEMPLOS:</p>
         </div>
         
         <div className="services-grid">

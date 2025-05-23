@@ -8,6 +8,7 @@ import About from './components/About/About'
 import Testimonials from './components/Testimonials/Testimonials'
 import Contact from './components/Contact/Contact'
 import Footer from './components/Footer/Footer'
+import TopButton from './components/topButton/TopButton'
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
       <Testimonials />
       <Contact />
       <Footer />
+      <TopButton />
     </div>
   )
 }
