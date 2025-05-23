@@ -6,9 +6,17 @@
 
 .footer-content {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr; /* Default for mobile */
   gap: 2rem;
   margin-bottom: 2rem;
+  align-items: center; /* Align items vertically in the grid */
+}
+
+.footer-brand {
+  display: flex;
+  justify-content: center; /* Horizontally center the logo */
+  align-items: center; /* Vertically center the logo */
+  /* Remove fixed height or padding if it restricts centering */
 }
 
 .footer-brand h3 {
@@ -20,6 +28,11 @@
   color: var(--color-text-secondary);
   margin: 0;
   font-size: 1rem;
+}
+
+.footer-logo {
+  max-height: 80px; /* Increased logo size, adjust as needed */
+  width: auto; /* Maintain aspect ratio */
 }
 
 .footer-links {
@@ -107,10 +120,26 @@
   font-size: 0.9rem;
 }
 
+.footer-copyright a {
+  color: #BFA170; /* Brown color for the link */
+  text-decoration: none;
+}
+
+.footer-copyright a:hover {
+  text-decoration: underline;
+}
+
 @media (min-width: 768px) {
   .footer-content {
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 0.5fr 2fr; /* Adjust column ratio if needed, e.g., less space for logo */
     gap: 3rem;
+    align-items: center; /* Changed from flex-start to center */
+  }
+  .footer-brand {
+    /* On larger screens, you might want the logo aligned to the start of its column if not globally centered */
+    /* justify-content: flex-start; */ /* Uncomment if you want it left-aligned in its column on desktop */
+    /* If it should remain centered in its column: */
+    justify-content: center;
   }
   
   .footer-bottom {
@@ -130,5 +159,8 @@
   
   .footer-content {
     gap: 4rem;
+  }
+  .footer-logo {
+    max-height: 100px; /* Further increase logo size on larger screens */
   }
 }

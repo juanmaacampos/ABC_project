@@ -4,12 +4,18 @@
   left: 0;
   right: 0;
   z-index: 1000;
-  background-color: transparent;
   transition: all 0.3s ease;
-  padding: 1rem 0;
+  padding: 0.5rem 0;
 }
 
-.navbar-scrolled {
+/* Make navbar transparent when in header section for all screen sizes */
+.navbar-in-header {
+  background-color: transparent;
+  box-shadow: none;
+}
+
+/* Only add background and shadow when scrolled or not in header */
+.navbar-scrolled, .navbar:not(.navbar-in-header) {
   background-color: var(--color-background);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
@@ -18,12 +24,35 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 60px; /* Fixed height for mobile */
 }
 
-.navbar-brand h3 {
-  color: var(--color-accent);
-  margin: 0;
-  font-size: 1.5rem;
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  z-index: 1001; /* Ensure logo stays above mobile menu */
+}
+
+.navbar-logo {
+  height: 35px; /* Smaller on mobile by default */
+  width: auto;
+  max-width: none;
+  transition: all 0.3s ease;
+}
+
+/* Make the logo larger when in header section */
+.navbar-in-header .navbar-logo {
+  height: 65px;
+}
+
+/* Make the logo slightly smaller when scrolled for a cleaner look */
+.navbar-scrolled .navbar-logo {
+  height: 40px;
+}
+
+/* When both in header and scrolled, prioritize the scrolled size */
+.navbar-in-header.navbar-scrolled .navbar-logo {
+  height: 40px;
 }
 
 .navbar-menu {
@@ -35,9 +64,10 @@
 }
 
 .navbar-menu a {
-  color: var(--color-text);
+  color: var(--color-text-primary);
   text-decoration: none;
   transition: color 0.3s ease;
+  font-weight: 500;
 }
 
 .navbar-menu a:hover {
@@ -45,48 +75,108 @@
 }
 
 .mobile-menu-toggle {
-  display: none;
+  display: flex;
   flex-direction: column;
   background: none;
   border: none;
   cursor: pointer;
   padding: 0.5rem;
+  z-index: 1001; /* Ensure button stays above mobile menu */
 }
 
 .mobile-menu-toggle span {
   width: 25px;
   height: 3px;
-  background-color: var(--color-text);
+  background-color: var(--color-text-primary);
   margin: 3px 0;
   transition: 0.3s;
+  border-radius: 2px;
+}
+
+/* Hamburger menu animation */
+.mobile-menu-toggle.active span:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
 }
 
 .mobile-menu {
-  display: none;
+  display: flex;
   flex-direction: column;
-  position: absolute;
-  top: 100%;
+  position: fixed;
+  top: 0;
   left: 0;
   right: 0;
+  bottom: 0;
   background-color: var(--color-background);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  padding: 1rem 0;
+  padding: 80px 2rem 2rem;
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+  transform: translateY(-100%);
 }
 
-@media (max-width: 768px) {
+.mobile-menu.active {
+  transform: translateY(0);
+}
+
+.mobile-menu li {
+  padding: 1rem 0;
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+.mobile-menu li:last-child {
+  border-bottom: none;
+}
+
+.mobile-menu a {
+  font-size: 1.2rem;
+  display: block;
+}
+
+.desktop-menu {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .navbar {
+    /* Remove these properties as they're now handled above */
+    /* background-color: transparent; */
+    /* box-shadow: none; */
+  }
+  
+  .navbar-scrolled {
+    /* This is now redundant but can be kept for clarity */
+    background-color: var(--color-background);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
   .desktop-menu {
-    display: none;
+    display: flex;
   }
   
   .mobile-menu-toggle {
-    display: flex;
+    display: none;
   }
   
-  .mobile-menu {
-    display: flex;
+  .navbar-logo {
+    height: 45px;
   }
   
-  .mobile-menu li {
-    padding: 0.5rem 0;
+  .navbar-in-header .navbar-logo {
+    height: 65px;
+  }
+  
+  .navbar-scrolled .navbar-logo {
+    height: 40px;
   }
 }

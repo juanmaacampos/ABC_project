@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './Testimonials.css'
-import client1Image from '../../assets/images/client-1.jpg'
-import client2Image from '../../assets/images/client-2.jpg'
+import client1Image from '../../assets/images/client-1.webp'
+import client2Image from '../../assets/images/client-2.jpeg'
 import client3Image from '../../assets/images/client-3.jpg'
 
 const Testimonials = () => {
@@ -9,23 +9,23 @@ const Testimonials = () => {
   
   const testimonials = [
     {
-      name: "María González",
+      name: "Maria Gonzalez",
       position: "CEO, TechStart Solutions",
-      content: "Javier transformó completamente nuestra estrategia empresarial. Su enfoque metodológico y visión estratégica nos permitió aumentar nuestros ingresos en un 150% en solo 18 meses.",
+      content: "Javier completely transformed our business strategy. His methodical approach and strategic vision allowed us to increase our revenue by 150% in just 18 months.",
       company: "TechStart Solutions",
       image: client1Image
     },
     {
-      name: "Carlos Rodríguez",
-      position: "Director General, InnovaCorp",
-      content: "La consultoría de Javier fue clave para nuestra expansión internacional. Su experiencia y red de contactos nos abrieron puertas que creíamos imposibles de alcanzar.",
+      name: "Carlos Rodriguez",
+      position: "General Director, InnovaCorp",
+      content: "Javier's consulting was key to our international expansion. His expertise and network opened doors we thought were impossible to reach.",
       company: "InnovaCorp",
       image: client2Image
     },
     {
-      name: "Ana Martínez",
-      position: "Fundadora, EcoVerde",
-      content: "Gracias a Javier, logramos optimizar nuestros procesos y reducir costos operativos en un 40%. Su acompañamiento durante la implementación fue excepcional.",
+      name: "Ana Martinez",
+      position: "Founder, EcoVerde",
+      content: "Thanks to Javier, we optimized our processes and reduced operational costs by 40%. His support during implementation was exceptional.",
       company: "EcoVerde",
       image: client3Image
     }
@@ -40,11 +40,11 @@ const Testimonials = () => {
   }
 
   return (
-    <section id="testimonios" className="testimonials section">
+    <section id="testimonials" className="testimonials section">
       <div className="container">
         <div className="testimonials-header" data-aos="fade-up">
-          <h2>Lo que dicen mis clientes</h2>
-          <p>Testimonios reales de empresarios que han transformado sus negocios</p>
+          <h2>Client Testimonials</h2>
+          <p>Real success stories from business owners who have transformed their companies</p>
         </div>
         
         <div className="testimonials-container" data-aos="fade-up" data-aos-delay="200">

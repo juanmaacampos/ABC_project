@@ -1,85 +1,59 @@
 import './Footer.css'
+import logoUpWhite from '../../assets/images/logo_up_white.png'; // Import the logo
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
   
-  const socialLinks = [
-    {
-      name: 'LinkedIn',
-      url: 'https://linkedin.com/in/javierasnaghi',
-      icon: '💼'
-    },
-    {
-      name: 'WhatsApp',
-      url: 'https://wa.me/5491112345678',
-      icon: '📱'
-    },
-    {
-      name: 'Email',
-      url: 'mailto:javier@asnaghibusiness.com',
-      icon: '✉️'
-    }
-  ]
 
   return (
     <footer className="footer">
       <div className="container">
         <div className="footer-content">
           <div className="footer-brand">
-            <h3>Asnaghi Business</h3>
-            <p>Transformando empresas, construyendo futuro.</p>
+            <img src={logoUpWhite} alt="Asnaghi Business Logo" className="footer-logo" />
           </div>
           
           <div className="footer-links">
             <div className="footer-section">
-              <h4>Servicios</h4>
+              <h4>Services</h4>
               <ul>
-                <li><a href="#servicios">Consultoría Estratégica</a></li>
-                <li><a href="#servicios">Optimización Operacional</a></li>
-                <li><a href="#servicios">Transformación Digital</a></li>
-                <li><a href="#servicios">Desarrollo Organizacional</a></li>
+                <li><a href="#services">Strategic Consulting</a></li>
+                <li><a href="#services">Operational Optimization</a></li>
+                <li><a href="#services">Digital Transformation</a></li>
+                <li><a href="#services">Organizational Development</a></li>
               </ul>
             </div>
             
             <div className="footer-section">
-              <h4>Contacto</h4>
+              <h4>Contact</h4>
               <ul>
-                <li><a href="#contacto">Conversemos</a></li>
+                <li><a href="#contact">Let's Talk</a></li>
                 <li><a href="mailto:javier@asnaghibusiness.com">Email</a></li>
-                <li><a href="tel:+5491112345678">Teléfono</a></li>
+                <li><a href="tel:+5491112345678">Phone</a></li>
               </ul>
             </div>
             
             <div className="footer-section">
               <h4>Legal</h4>
               <ul>
-                <li><a href="/privacy">Política de Privacidad</a></li>
-                <li><a href="/terms">Términos de Servicio</a></li>
-                <li><a href="/cookies">Política de Cookies</a></li>
+                <li><a href="/privacy">Privacy Policy</a></li>
+                <li><a href="/terms">Terms of Service</a></li>
+                <li><a href="/cookies">Cookie Policy</a></li>
               </ul>
             </div>
           </div>
         </div>
         
         <div className="footer-bottom">
-          <div className="footer-social">
-            {socialLinks.map((link, index) => (
-              <a 
-                key={index}
-                href={link.url} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="social-link"
-                title={link.name}
-              >
-                <span className="social-icon">{link.icon}</span>
-                <span className="social-name">{link.name}</span>
-              </a>
-            ))}
-          </div>
           
           <div className="footer-copyright">
-            <p>&copy; {currentYear} Javier Asnaghi. Todos los derechos reservados.</p>
+            <p>
+              &copy; {currentYear}{' '}
+              <a href="https://jmcdev.site" target="_blank" rel="noopener noreferrer">
+                JMCDEV Digital Solutions.
+              </a>{' '}
+              All rights reserved.
+            </p>
           </div>
         </div>
       </div>

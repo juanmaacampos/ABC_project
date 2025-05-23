@@ -1,53 +1,53 @@
 import './About.css'
-import profileImage from '../../assets/images/profile-image.jpg'
+import profileImage from '../../assets/images/customer_about.png'
 
 const About = () => {
   return (
-    <section id="sobre-mi" className="about section">
+    <section id="about" className="about section">
       <div className="container">
         <div className="about-content">
           <div className="about-image" data-aos="fade-right">
             <img 
               src={profileImage} 
-              alt="Javier Asnaghi - Consultor Empresarial" 
+              alt="Javier Asnaghi - Business Consultant" 
               className="profile-image"
             />
           </div>
           
           <div className="about-text" data-aos="fade-left">
-            <h2>¿Quién soy?</h2>
+            <h2>Who I Am?</h2>
             <div className="about-description">
-              <p>
-                Soy Javier Asnaghi, consultor empresarial con más de 15 años de experiencia 
-                ayudando a empresas de diversos sectores a alcanzar su máximo potencial. 
-                Mi enfoque se centra en crear soluciones personalizadas que no solo resuelven 
-                problemas inmediatos, sino que construyen las bases para un crecimiento sostenible.
+              <p className="mobile-friendly-text">
+                I'm Javier Asnaghi, a business consultant with over 15 years of experience 
+                helping companies across diverse sectors reach their full potential. 
+                My approach focuses on creating customized solutions that not only solve 
+                immediate problems but also build the foundation for sustainable growth.
               </p>
               
-              <p>
-                A lo largo de mi carrera, he trabajado con startups emergentes, PYMES en 
-                crecimiento y grandes corporaciones, siempre con el objetivo de transformar 
-                desafíos en oportunidades de crecimiento. Mi metodología combina análisis 
-                riguroso, estrategia innovadora y ejecución práctica.
+              <p className="mobile-friendly-text">
+                Throughout my career, I've worked with emerging startups, growing SMEs, 
+                and large corporations, always with the goal of transforming challenges into 
+                growth opportunities. My methodology combines rigorous analysis, innovative 
+                strategy, and practical execution.
               </p>
               
-              <div className="about-stats">
+              <div className="about-stats mobile-stats">
                 <div className="stat">
                   <h3>15+</h3>
-                  <p>Años de experiencia</p>
+                  <p>Years of experience</p>
                 </div>
                 <div className="stat">
                   <h3>200+</h3>
-                  <p>Proyectos exitosos</p>
+                  <p>Projects</p>
                 </div>
                 <div className="stat">
                   <h3>50+</h3>
-                  <p>Empresas transformadas</p>
+                  <p>Businesses</p>
                 </div>
               </div>
               
-              <div className="about-cta">
-                <a href="#contacto" className="btn-primary">Trabajemos juntos</a>
+              <div className="about-cta mobile-cta">
+                <a href="#contact" className="btn-primary">Let's Work Together</a>
               </div>
             </div>
           </div>

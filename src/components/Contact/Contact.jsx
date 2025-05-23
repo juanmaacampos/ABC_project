@@ -19,24 +19,24 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    // Aquí se implementaría la lógica de envío del formulario
+    // Here we would implement the form submission logic
     console.log('Form submitted:', formData)
-    alert('Mensaje enviado. Te contactaré pronto.')
+    alert('Message sent. I will contact you soon.')
   }
 
   const services = [
-    'Consultoría Estratégica',
-    'Optimización Operacional',
-    'Transformación Digital',
-    'Desarrollo Organizacional'
+    'Strategic Consulting',
+    'Operational Excellence',
+    'Digital Transformation',
+    'Organizational Development'
   ]
 
   return (
-    <section id="contacto" className="contact section">
+    <section id="contact" className="contact section">
       <div className="container">
         <div className="contact-header" data-aos="fade-up">
-          <h2>Conversemos</h2>
-          <p>¿Listo para transformar tu empresa? Contáctame y comencemos a trabajar juntos.</p>
+          <h2>Let's Connect</h2>
+          <p>Ready to transform your business? Contact me and let's start working together.</p>
         </div>
         
         <div className="contact-content">
@@ -46,7 +46,7 @@ const Contact = () => {
                 <input
                   type="text"
                   name="name"
-                  placeholder="Nombre completo"
+                  placeholder="Full name"
                   value={formData.name}
                   onChange={handleChange}
                   required
@@ -57,7 +57,7 @@ const Contact = () => {
                 <input
                   type="email"
                   name="email"
-                  placeholder="Email corporativo"
+                  placeholder="Corporate email"
                   value={formData.email}
                   onChange={handleChange}
                   required
@@ -68,7 +68,7 @@ const Contact = () => {
                 <input
                   type="text"
                   name="company"
-                  placeholder="Empresa"
+                  placeholder="Company"
                   value={formData.company}
                   onChange={handleChange}
                   required
@@ -82,7 +82,7 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                 >
-                  <option value="">Selecciona un servicio</option>
+                  <option value="">Select a service</option>
                   {services.map((service, index) => (
                     <option key={index} value={service}>{service}</option>
                   ))}
@@ -92,7 +92,7 @@ const Contact = () => {
               <div className="form-group">
                 <textarea
                   name="message"
-                  placeholder="Cuéntame sobre tu proyecto o desafío empresarial"
+                  placeholder="Tell me about your project or business challenge"
                   rows="5"
                   value={formData.message}
                   onChange={handleChange}
@@ -101,7 +101,7 @@ const Contact = () => {
               </div>
               
               <button type="submit" className="btn-primary btn-full">
-                Enviar mensaje
+                Send Message
               </button>
             </form>
           </div>
@@ -113,7 +113,7 @@ const Contact = () => {
             </div>
             
             <div className="contact-item">
-              <h3>Teléfono</h3>
+              <h3>Phone</h3>
               <p>+54 9 11 1234-5678</p>
             </div>
             
@@ -123,14 +123,14 @@ const Contact = () => {
             </div>
             
             <div className="contact-item">
-              <h3>Ubicación</h3>
+              <h3>Location</h3>
               <p>Buenos Aires, Argentina</p>
             </div>
             
             <div className="contact-availability">
-              <h3>Disponibilidad</h3>
-              <p>Respondo en menos de 24 horas</p>
-              <p>Consultas iniciales sin costo</p>
+              <h3>Availability</h3>
+              <p>Response within 24 hours</p>
+              <p>Initial consultations at no cost</p>
             </div>
           </div>
         </div>

@@ -42,6 +42,21 @@
   gap: 1rem;
 }
 
+.author-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.client-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
 .author-info h4 {
   color: var(--color-accent);
   margin-bottom: 0.25rem;

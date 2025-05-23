@@ -1,43 +1,40 @@
 import './Services.css'
-import strategyIcon from '../../assets/images/strategy-icon.svg'
-import operationsIcon from '../../assets/images/operations-icon.svg'
-import digitalIcon from '../../assets/images/digital-icon.svg'
-import organizationIcon from '../../assets/images/organization-icon.svg'
+import { MdOutlineLightbulb, MdOutlineBarChart, MdOutlineComputer, MdOutlinePeople } from 'react-icons/md'
 
 const Services = () => {
   const services = [
     {
-      title: 'Consultoría Estratégica',
-      description: 'Desarrollo de estrategias empresariales que optimizan recursos y maximizan resultados a largo plazo.',
-      features: ['Análisis de mercado', 'Planificación estratégica', 'Implementación de KPIs'],
-      icon: strategyIcon
+      title: 'Strategic Consulting',
+      description: 'Development of business strategies that optimize resources and maximize long-term results.',
+      features: ['Market analysis', 'Strategic planning', 'KPI implementation'],
+      icon: <MdOutlineLightbulb size={48} />
     },
     {
-      title: 'Optimización Operacional',
-      description: 'Mejora de procesos internos para aumentar la eficiencia y reducir costos operativos.',
-      features: ['Análisis de procesos', 'Automatización', 'Gestión del cambio'],
-      icon: operationsIcon
+      title: 'Operational Excellence',
+      description: 'Improvement of internal processes to increase efficiency and reduce operational costs.',
+      features: ['Process analysis', 'Automation', 'Change management'],
+      icon: <MdOutlineBarChart size={48} />
     },
     {
-      title: 'Transformación Digital',
-      description: 'Integración de tecnologías digitales para modernizar y potenciar tu modelo de negocio.',
-      features: ['Digitalización de procesos', 'Implementación de sistemas', 'Capacitación del equipo'],
-      icon: digitalIcon
+      title: 'Digital Transformation',
+      description: 'Integration of digital technologies to modernize and enhance your business model.',
+      features: ['Process digitization', 'Systems implementation', 'Team training'],
+      icon: <MdOutlineComputer size={48} />
     },
     {
-      title: 'Desarrollo Organizacional',
-      description: 'Fortalecimiento de la cultura empresarial y desarrollo del capital humano.',
-      features: ['Coaching ejecutivo', 'Desarrollo de liderazgo', 'Gestión del talento'],
-      icon: organizationIcon
+      title: 'Organizational Development',
+      description: 'Strengthening corporate culture and developing human capital.',
+      features: ['Executive coaching', 'Leadership development', 'Talent management'],
+      icon: <MdOutlinePeople size={48} />
     }
   ]
 
   return (
-    <section id="servicios" className="services section">
+    <section id="services" className="services section">
       <div className="container">
         <div className="services-header" data-aos="fade-up">
-          <h2>Servicios</h2>
-          <p>Soluciones integrales para impulsar el crecimiento de tu empresa</p>
+          <h2>Services</h2>
+          <p>Comprehensive solutions to drive your company's growth</p>
         </div>
         
         <div className="services-grid">
@@ -49,7 +46,7 @@ const Services = () => {
               data-aos-delay={index * 100}
             >
               <div className="service-icon">
-                <img src={service.icon} alt={service.title} />
+                {service.icon}
               </div>
               <h3>{service.title}</h3>
               <p>{service.description}</p>
